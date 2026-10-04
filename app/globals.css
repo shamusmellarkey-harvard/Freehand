@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cream: #fbf7f0;
+  --color-paper: #fffdf9;
+  --color-ink: #231f1a;
+  --color-muted: #6b625a;
+  --color-line: #e8dfd2;
+  --color-terracotta: #c2552b;
+  --color-terracotta-dark: #a4461f;
+  --color-terracotta-soft: #f7e4da;
+  --color-sage: #5b7b5c;
+  --color-sage-soft: #e3ecdf;
+  --color-sun: #d9a441;
+  --color-sun-soft: #fbefd2;
+  --color-rose-soft: #f6dedb;
+  --color-rose-ink: #8f3b31;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Reusable primitives (kept tiny on purpose). */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition
+    disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta;
+}
+.btn-primary {
+  @apply btn bg-terracotta text-white hover:bg-terracotta-dark;
+}
+.btn-secondary {
+  @apply btn border border-line bg-paper text-ink hover:border-ink/30 hover:bg-white;
+}
+.btn-ghost {
+  @apply btn text-ink hover:bg-ink/5;
+}
+.btn-sage {
+  @apply btn bg-sage text-white hover:bg-sage/90;
+}
+.card {
+  @apply rounded-2xl border border-line bg-paper shadow-[0_1px_2px_rgba(35,31,26,0.04)];
+}
+.input {
+  @apply w-full rounded-xl border border-line bg-white px-3 py-2 text-base text-ink shadow-none
+    placeholder:text-muted/60 focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/20;
+}
+.label {
+  @apply mb-1 block text-sm font-medium text-ink;
+}
+.hint {
+  @apply mt-1 text-xs text-muted;
+}
+.prose-wrap {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+details.menu > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.menu > summary::-webkit-details-marker {
+  display: none;
 }

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Open Book: geometric pages fanning out in yellow and blue">
+  <rect width="800" height="600" fill="#FFF4C8"/>
+  <g transform="translate(400 420)"><g fill="#F2B705"><path d="M0 0 L-320 -60 L-300 -200 Z"/><path d="M0 0 L-200 -220 L-100 -320 Z"/><path d="M0 0 L100 -320 L200 -220 Z"/><path d="M0 0 L300 -200 L320 -60 Z"/></g><g fill="#2E6FB7" opacity="0.9"><path d="M0 0 L-300 -200 L-200 -220 Z"/><path d="M0 0 L-100 -320 L100 -320 Z"/><path d="M0 0 L200 -220 L300 -200 Z"/></g><rect x="-180" y="0" width="360" height="60" fill="#1F3A5F" rx="8"/></g>
+</svg>
